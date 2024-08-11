@@ -4,12 +4,13 @@ interface BreedCardProps {
     id: string;
     name: string;
     imageUrl: string;
-    type: 'dog' | 'cat';
 }
 
-const BreedCard: React.FC<BreedCardProps> = ({ id, name, imageUrl, type }) => {
+const BreedCard: React.FC<BreedCardProps> = ({ id, name, imageUrl }) => {
     return (
-            <div className="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer">
+            <div
+                key={id}
+                className="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer">
                 <img
                     src={imageUrl}
                     alt={name}

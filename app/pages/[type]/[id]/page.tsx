@@ -11,7 +11,7 @@ const BreedDetailsPage = async ({ params }: { params: { id: string; type: 'dog' 
             <h1 className="text-2xl font-bold mb-4">{breed.name}</h1>
             <p>{breed.temperament}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                {images.map((image, index) => (
+                {images.map((image:string, index:number) => (
                     <img
                         key={index}
                         src={image}

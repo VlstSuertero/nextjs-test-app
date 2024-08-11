@@ -23,18 +23,26 @@ export default function HomePage() {
       <div>
         <h1 className="text-2xl font-bold mb-4">Dog Breeds</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {dogBreeds.map((breed) => (
+          {dogBreeds.map((breed:any) => (
               <Link key={breed.id} href={`/pages/dog/${breed.id}`}>
-                <BreedCard name={breed.name} imageUrl={breed.imageUrl} />
+                <BreedCard
+                    id={breed.id}
+                    name={breed.name}
+                    imageUrl={breed.imageUrl}
+                />
               </Link>
           ))}
         </div>
 
         <h1 className="text-2xl font-bold mt-8 mb-4">Cat Breeds</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {catBreeds.map((breed) => (
+          {catBreeds.map((breed:any) => (
               <Link key={breed.id} href={`/pages/cat/${breed.id}`}>
-                <BreedCard name={breed.name} imageUrl={breed.imageUrl} />
+                <BreedCard
+                    id={breed.id}
+                    name={breed.name}
+                    imageUrl={breed.imageUrl}
+                />
               </Link>
           ))}
         </div>
