@@ -1,0 +1,11 @@
+.breedCardComponent {
+    @apply bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer
+}
+
+.breedCardComponent img{
+    @apply w-full h-48 object-cover
+}
+
+.breedName {
+    @apply p-4 text-lg font-semibold text-gray-800
+}

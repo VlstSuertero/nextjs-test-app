@@ -1,0 +1,6 @@
+.header {
+    @apply bg-blue-600 text-white p-4
+}
+.header h1{
+    @apply text-xl font-bold
+}

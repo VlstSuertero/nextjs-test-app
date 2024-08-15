@@ -15,7 +15,7 @@ const CAT_API_BASE_URL = 'https://api.thecatapi.com/v1';
 export const fetchDogBreeds = async () => {
     const response = await fetch(`${DOG_API_BASE_URL}/breeds`, requestOptions);
     const data = await response.json();
-    return data.slice(0, 10).map((breed: any) => ({
+    return data.map((breed: any) => ({
         id: breed.id,
         name: breed.name,
         imageUrl: breed.image?.url || '/placeholder.png',
@@ -25,7 +25,7 @@ export const fetchDogBreeds = async () => {
 export const fetchCatBreeds = async () => {
     const response = await fetch(`${CAT_API_BASE_URL}/breeds`, requestOptions);
     const data = await response.json();
-    return data.slice(0, 10).map((breed: any) => ({
+    return data.map((breed: any) => ({
         id: breed.id,
         name: breed.name,
         imageUrl: breed.image?.url || '/placeholder.png',

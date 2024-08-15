@@ -1,9 +1,7 @@
 "use client"
-
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import BreedCard from '../app/components/BreedCard';
 import { fetchDogBreeds, fetchCatBreeds } from './utils/api';
+import PetBreedsBlock from './components/petBreedsBlock/PetBreedsBlock'
 
 export default function HomePage() {
   const [dogBreeds, setDogBreeds] = useState([]);
@@ -21,31 +19,12 @@ export default function HomePage() {
 
   return (
       <div>
-        <h1 className="text-2xl font-bold mb-4">Dog Breeds</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {dogBreeds.map((breed:any) => (
-              <Link key={breed.id} href={`/pages/dog/${breed.id}`}>
-                <BreedCard
-                    id={breed.id}
-                    name={breed.name}
-                    imageUrl={breed.imageUrl}
-                />
-              </Link>
-          ))}
-        </div>
-
-        <h1 className="text-2xl font-bold mt-8 mb-4">Cat Breeds</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {catBreeds.map((breed:any) => (
-              <Link key={breed.id} href={`/pages/cat/${breed.id}`}>
-                <BreedCard
-                    id={breed.id}
-                    name={breed.name}
-                    imageUrl={breed.imageUrl}
-                />
-              </Link>
-          ))}
-        </div>
+        <PetBreedsBlock breeds={dogBreeds} type={'dog'}>
+          Dog Breeds
+        </PetBreedsBlock>
+        <PetBreedsBlock breeds={catBreeds} type={'cat'}>
+          Cat Breeds
+        </PetBreedsBlock>
       </div>
   );
 }
